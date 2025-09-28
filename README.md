@@ -51,7 +51,7 @@ To address this challenge, we propose CLPO (Curriculum-guided Learning for Polic
 We recommend using Conda to manage your environment. Run the following commands to setup your environment:
 
 ```bash
-git clone https://github.com/csukin/CLPO.git && cd CLPO
+git clone https://github.com/csuking/CLPO.git && cd CLPO
 conda create -n clpo python=3.10
 conda activate clpo
 pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
@@ -127,7 +127,7 @@ We thank the authors of veRL for providing the excellent training framework that
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=csukin/CLPO&type=Date)](https://star-history.com/#csukin/CLPO&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=csuking/CLPO&type=Date)](https://star-history.com/#csuking/CLPO&Date)
 
 ## 📄 License
 
