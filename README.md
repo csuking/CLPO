@@ -114,7 +114,7 @@ If you find this work helpful, please consider citing our paper:
 
 ```bibtex
 @article{clpo2025,
-  title={CLPO: Guided Self-Evolution for Mathematical Reasoning},
+  title={CLPO: Curriculum Learning meets Policy Optimization for LLM Reasoning},
   author={Your Name and Others},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2025}
