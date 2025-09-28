@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-<img src="CLPO-teaser.jpg" alt="CLPO Teaser" width="800"/>
+<img src="assets/CLPO-teaser.jpg" alt="CLPO Teaser" width="800"/>
 </div>
 
 *Figure 1: CLPO achieves significant improvements across mathematical reasoning benchmarks through curriculum learning and policy optimization, outperforming state-of-the-art methods on Qwen3-8B.*
@@ -19,14 +19,10 @@
 
 ## 💡 Introduction
 
-CLPO (Curriculum Learning meets Policy Optimization) is a novel reinforcement learning framework for mathematical reasoning that combines curriculum learning with policy optimization. Our approach systematically organizes training problems by difficulty and adaptively focuses on appropriately challenging problems to enhance LLM reasoning capabilities. The framework includes:
-
-1. **Problem Difficulty Assessment**: Automatically classify problems by difficulty level
-2. **Curriculum Design**: Systematically organize training progression
-3. **Adaptive Policy Optimization**: Focus learning on appropriately challenging problems
+To address this challenge, we propose CLPO (Curriculum-guided Learning for Policy Optimization), a novel framework that actualizes a paradigm of Guided Self-Evolution (Silver et al., 2018). The core innovation of CLPO is its elevation of rollout information from a mere reward calculation signal to the central driver for constructing a dynamic curriculum. It employs Online Curriculum Learning to assess problem difficulty in real-time, which in turn guides an Adaptive Problem Restructuring mechanism to diversify medium problems and simplify hard ones. Furthermore, we introduce Difficulty-aware Policy Optimization, which integrates the curriculum signal into the optimization process via dynamic KL regularization. Through these mechanisms, CLPO transforms the training process into a structured, adaptive curriculum that co-evolves with the model's capabilities, all without any external dependencies.
 
 <div align="center">
-<img src="CLPO-workflow.png" alt="CLPO Workflow" width="800"/>
+<img src="assets/CLPO-workflow.png" alt="CLPO Workflow" width="800"/>
 </div>
 
 *Figure 2: The CLPO workflow showing the curriculum learning process with problem difficulty assessment, curriculum design, and adaptive policy optimization.*
@@ -55,21 +51,13 @@ CLPO (Curriculum Learning meets Policy Optimization) is a novel reinforcement le
 We recommend using Conda to manage your environment. Run the following commands to setup your environment:
 
 ```bash
-git clone https://github.com/your-username/CLPO.git && cd CLPO
+git clone https://github.com/csukin/CLPO.git && cd CLPO
 conda create -n clpo python=3.10
 conda activate clpo
 pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 ```
 
-### 🪁 Evaluation
-
-We provide evaluation scripts for various mathematical reasoning benchmarks:
-
-```bash
-# Configure model path and data path in the script
-bash scripts/evaluation.sh
-```
 
 ### ⚡️ Training
 
@@ -139,7 +127,7 @@ We thank the authors of veRL for providing the excellent training framework that
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/CLPO&type=Date)](https://star-history.com/#your-username/CLPO&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=csukin/CLPO&type=Date)](https://star-history.com/#csukin/CLPO&Date)
 
 ## 📄 License
 

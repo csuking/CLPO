@@ -1,0 +1,593 @@
+<!-- This file was moved to /project-page/index.html for GitHub Pages -->
+<!-- Please use the project-page directory for the CLPO website -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLPO: Guided Self-Evolution for Mathematical Reasoning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Main Content */
+        .main {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 3rem 2rem;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #34495e;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Images */
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Results Table */
+        .results-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .method-category {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .our-method {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            font-weight: 600;
+        }
+
+        .best-score {
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* News Section */
+        .news-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .news-date {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title h1 {
+                font-size: 2rem;
+            }
+            
+            .links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="title">
+                <h1>CLPO</h1>
+                <p class="subtitle">Guided Self-Evolution for Mathematical Reasoning</p>
+            </div>
+            <div class="links">
+                <a href="#" class="link-btn">
+                    <i class="fas fa-file-alt"></i> Paper
+                </a>
+                <a href="#" class="link-btn">
+                    <i class="fab fa-github"></i> Code
+                </a>
+                <a href="#" class="link-btn">
+                    <i class="fas fa-database"></i> Dataset
+                </a>
+                <a href="#" class="link-btn">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main">
+            <!-- Introduction Section -->
+            <div class="section">
+                <div class="image-container">
+                    <img src="../CLPO-teaser.jpg" alt="CLPO Teaser">
+                    <p class="image-caption">
+                        Figure 1: CLPO achieves significant improvements across mathematical reasoning benchmarks through guided self-evolution, outperforming state-of-the-art methods on Qwen3-8B.
+                    </p>
+                </div>
+                
+                <p class="intro-text">
+                    CLPO (Guided Self-Evolution) is a novel reinforcement learning framework for mathematical reasoning that enables models to evolve through self-guided problem rewriting and solving. Unlike traditional RLVR methods that rely on external guidance, CLPO operates under the <strong>Guided Self-Evolution</strong> paradigm.
+                </p>
+            </div>
+
+            <!-- News Section -->
+            <div class="section">
+                <h2><i class="fas fa-fire"></i> News</h2>
+                <div class="news-item">
+                    <span class="news-date">[2025/01/XX]</span> Full code and datasets for CLPO training and evaluation released.
+                </div>
+                <div class="news-item">
+                    <span class="news-date">[2025/01/XX]</span> CLPO paper, repository, and project page released.
+                </div>
+            </div>
+
+            <!-- Method Overview -->
+            <div class="section">
+                <h2><i class="fas fa-lightbulb"></i> Method Overview</h2>
+                <div class="image-container">
+                    <img src="../CLPO-workflow.png" alt="CLPO Workflow">
+                    <p class="image-caption">
+                        Figure 2: The CLPO workflow showing the guided self-evolution process with problem rewriting, difficulty assessment, and adaptive training.
+                    </p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Problem Rewriting</h3>
+                        <p>Automatically generates problem variations while preserving semantic meaning and ground truth answers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Difficulty Assessment</h3>
+                        <p>Classifies problems into hard, medium, and easy categories based on model performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Adaptive Training</h3>
+                        <p>Focuses learning on appropriately challenging problems for optimal skill development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="section">
+                <h2><i class="fas fa-trophy"></i> Main Results</h2>
+                <p class="intro-text">
+                    Performance comparison on Qwen3-8B across mathematical reasoning benchmarks. CLPO demonstrates superior performance across all benchmarks without relying on external guidance.
+                </p>
+                
+                <div class="results-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Optimization Policy</th>
+                                <th>MATH 500</th>
+                                <th>Minerva Math</th>
+                                <th>Olympiad Bench</th>
+                                <th>AMC23</th>
+                                <th>AIME24</th>
+                                <th>MMLU Pro</th>
+                                <th>Theorem QA</th>
+                                <th>GPQA Diamond</th>
+                                <th>Avg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="method-category">
+                                <td colspan="10"><strong>Supervised Fine-Tuning (SFT)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>RAFT</td>
+                                <td>Ranking-Based Imitation</td>
+                                <td>76.20</td>
+                                <td>35.58</td>
+                                <td>36.86</td>
+                                <td>50.00</td>
+                                <td>26.67</td>
+                                <td>65.93</td>
+                                <td>43.50</td>
+                                <td>36.76</td>
+                                <td>46.44</td>
+                            </tr>
+                            <tr>
+                                <td>Refinement FT</td>
+                                <td>Guided Refinement</td>
+                                <td>83.20</td>
+                                <td>47.58</td>
+                                <td>40.71</td>
+                                <td>70.00</td>
+                                <td>33.33</td>
+                                <td>67.84</td>
+                                <td>41.29</td>
+                                <td>34.47</td>
+                                <td>52.30</td>
+                            </tr>
+                            <tr>
+                                <td>Critique FT</td>
+                                <td>Learning to Critique</td>
+                                <td>79.00</td>
+                                <td>35.23</td>
+                                <td>39.64</td>
+                                <td>67.50</td>
+                                <td>33.33</td>
+                                <td>63.16</td>
+                                <td>46.00</td>
+                                <td>34.84</td>
+                                <td>49.84</td>
+                            </tr>
+                            <tr>
+                                <td>CITL-FT</td>
+                                <td>Mixed-Data SFT</td>
+                                <td>76.40</td>
+                                <td>37.20</td>
+                                <td>38.57</td>
+                                <td>62.50</td>
+                                <td>30.00</td>
+                                <td>66.13</td>
+                                <td>44.25</td>
+                                <td>36.36</td>
+                                <td>48.93</td>
+                            </tr>
+                            <tr class="method-category">
+                                <td colspan="10"><strong>Reinforcement Learning with Verifiable Rewards (RLVR)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>GRPO</td>
+                                <td>Group-Based RL</td>
+                                <td>89.20</td>
+                                <td>51.47</td>
+                                <td>57.40</td>
+                                <td>82.50</td>
+                                <td>43.33</td>
+                                <td>69.86</td>
+                                <td>54.75</td>
+                                <td>47.80</td>
+                                <td>62.04</td>
+                            </tr>
+                            <tr>
+                                <td>DAPO</td>
+                                <td>Dynamic Sampling</td>
+                                <td><span class="best-score">91.20</span></td>
+                                <td>53.31</td>
+                                <td>63.80</td>
+                                <td>87.50</td>
+                                <td>46.67</td>
+                                <td>70.01</td>
+                                <td>55.00</td>
+                                <td>48.48</td>
+                                <td>64.50</td>
+                            </tr>
+                            <tr>
+                                <td>LUFFY</td>
+                                <td>Off-Policy Imitation</td>
+                                <td>89.40</td>
+                                <td>52.94</td>
+                                <td>58.80</td>
+                                <td>85.00</td>
+                                <td>40.00</td>
+                                <td>70.34</td>
+                                <td>58.25</td>
+                                <td>49.49</td>
+                                <td>63.03</td>
+                            </tr>
+                            <tr>
+                                <td>Critique-GRPO (Simple)</td>
+                                <td>Critique-Driven RL</td>
+                                <td>89.40</td>
+                                <td>52.57</td>
+                                <td>60.20</td>
+                                <td>87.50</td>
+                                <td>40.00</td>
+                                <td>70.13</td>
+                                <td>59.00</td>
+                                <td>48.63</td>
+                                <td>63.43</td>
+                            </tr>
+                            <tr>
+                                <td>Critique-GRPO (CoT)</td>
+                                <td>Critique-Driven RL</td>
+                                <td><span class="best-score">91.20</span></td>
+                                <td>61.50</td>
+                                <td>63.80</td>
+                                <td><span class="best-score">90.00</span></td>
+                                <td>46.67</td>
+                                <td>70.98</td>
+                                <td>59.50</td>
+                                <td>50.50</td>
+                                <td>66.77</td>
+                            </tr>
+                            <tr class="our-method">
+                                <td><strong>CLPO (Ours)</strong></td>
+                                <td><strong>Guided Self-Evolution</strong></td>
+                                <td><span class="best-score">89.60</span></td>
+                                <td><span class="best-score">76.10</span></td>
+                                <td><span class="best-score">77.50</span></td>
+                                <td><span class="best-score">90.00</span></td>
+                                <td><span class="best-score">50.00</span></td>
+                                <td><span class="best-score">72.39</span></td>
+                                <td><span class="best-score">71.63</span></td>
+                                <td><span class="best-score">62.63</span></td>
+                                <td><span class="best-score">73.73</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>+9.23 points</h3>
+                        <p>Average improvement over best baseline (Critique-GRPO CoT)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>+22.79 points</h3>
+                        <p>Improvement on Minerva Math benchmark</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>+13.70 points</h3>
+                        <p>Improvement on Olympiad Bench</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Start Section -->
+            <div class="section">
+                <h2><i class="fas fa-rocket"></i> Quick Start</h2>
+                
+                <h3>Setup Environment</h3>
+                <div class="code-block">
+git clone https://github.com/your-username/CLPO.git && cd CLPO
+conda create -n clpo python=3.10
+conda activate clpo
+pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+pip install -r requirements.txt
+                </div>
+                
+                <h3>Training CLPO</h3>
+                <div class="code-block">
+# Configure paths in the script
+bash scripts/clpo_qwen3_8b.sh
+                </div>
+                
+                <h3>Key Configuration</h3>
+                <div class="code-block">
+# CLPO specific settings
+clpo_rewrite_mode="both"           # Rewrite both hard and medium problems
+clpo_hard_acc_upper=0.3           # Hard problem threshold
+clpo_med_acc_lower=0.3            # Medium problem lower bound
+clpo_med_acc_upper=0.7            # Medium problem upper bound
+clpo_save_rewrite_data=true       # Save rewritten data for analysis
+                </div>
+            </div>
+
+            <!-- Citation Section -->
+            <div class="section">
+                <h2><i class="fas fa-quote-right"></i> Citation</h2>
+                <p class="intro-text">If you find this work helpful, please consider citing our paper:</p>
+                <div class="code-block">
+@article{clpo2025,
+  title={CLPO: Guided Self-Evolution for Mathematical Reasoning},
+  author={Your Name and Others},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
+}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2025 CLPO Team. All rights reserved.</p>
+            <p>Built with ❤️ for the mathematical reasoning community</p>
+        </div>
+    </div>
+</body>
+</html>
