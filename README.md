@@ -14,7 +14,7 @@
 
 ## 🔥 News
 
-- [2025/09/29] **Full code for CLPO training and evaluation released.**
+- [2025/09/29] **Full code for CLPO training released.**
 - [2025/09/29] **CLPO paper, repository, and project page released.**
 
 ## 💡 Introduction
