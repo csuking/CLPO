@@ -3,9 +3,6 @@ set -euo pipefail
 
 export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-"0,1,2,3,4,5,6,7"}
 
-project_name='AIME2024-Qwen3-8B'
-timestamp=$(date +%Y%m%d_%H%M%S)
-experiment_name="aime2024_clpo_${timestamp}"
 
 # Data paths
 train_file="path/to/train.json"
@@ -78,9 +75,6 @@ clpo_rewrite_save_path="path/to/rewrite_data.json"
 clpo_hard_rewrite_save_path="path/to/hard_rewrite_data.json"
 clpo_medium_rewrite_save_path="path/to/medium_rewrite_data.json"
 
-echo "==== CLPO AIME2024 TRAINING CONFIGURATION ===="
-echo "Project: $project_name"
-echo "Experiment: $experiment_name"
 echo "Train Data: $train_file"
 echo "Val Data: $val_file"
 echo "Model Path: $model_path"
@@ -138,9 +132,7 @@ python3 -m verl.trainer.main_ppo \
   actor_rollout_ref.rollout.max_num_batched_tokens="${max_num_batched_tokens}" \
   actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu="${log_prob_micro_batch_size_per_gpu}" \
   actor_rollout_ref.ref.fsdp_config.param_offload="${param_offload}" \
-  trainer.logger='["console", "swanlab"]' \
-  trainer.project_name="${project_name}" \
-  trainer.experiment_name="${experiment_name}" \
+  trainer.logger='["console"]' \
   trainer.total_epochs="${total_epochs}" \
   trainer.critic_warmup="${critic_warmup}" \
   trainer.test_freq="${test_freq}" \
