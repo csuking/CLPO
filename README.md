@@ -113,10 +113,10 @@ The CLPO framework consists of three main components:
 If you find this work helpful, please consider citing our paper:
 
 ```bibtex
-@article{clpo2025,
+@article{zhang2025clpo,
   title={CLPO: Curriculum Learning meets Policy Optimization for LLM Reasoning},
-  author={Your Name and Others},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  author={Zhang, Shijie and Sun, Guohao and Zhang, Kevin and Guo, Xiang and Guo, Rujun},
+  journal={arXiv preprint arXiv:2509.25004},
   year={2025}
 }
 ```
