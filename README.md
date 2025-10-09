@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**[🌐 Website](https://csuking.github.io/CLPO.github.io/)** • **[📜 Paper]** • **[🐱 GitHub](https://github.com/csuking/CLPO)** • **[🐦 Twitter]**
+**[🌐 Website](https://csuking.github.io/CLPO.github.io/)** • **[📜 Paper](https://arxiv.org/pdf/2509.25004)** • **[🐱 GitHub](https://github.com/csuking/CLPO)** • **[🐦 Twitter]**
 
 </div>
 
